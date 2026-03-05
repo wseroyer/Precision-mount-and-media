@@ -393,12 +393,13 @@ h3 { font-size: var(--fs-lg); font-weight: 700; }
   line-height: 1.5;
 }
 .hero-photo-panel img {
-  position: absolute;
-  inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
+  position: relative;
   z-index: 1;
-  border-radius: inherit;
+  width: 72%;
+  max-width: 340px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 32px rgba(26,140,255,0.30));
 }
 
 .pill {

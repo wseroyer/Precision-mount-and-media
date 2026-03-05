@@ -1,34 +1,6 @@
 (function () {
   'use strict';
 
-  /* ── Quote form → mailto ───────────────────────────────────── */
-  var form = document.getElementById('quoteForm');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name    = (document.getElementById('name')    || {}).value || '';
-      var phone   = (document.getElementById('phone')   || {}).value || '';
-      var tvsize  = (document.getElementById('tvsize')  || {}).value || '';
-      var address = (document.getElementById('address') || {}).value || '';
-      var details = (document.getElementById('details') || {}).value || '';
-
-      var body = [
-        'Name: '    + name,
-        'Phone: '   + phone,
-        'TV size: ' + tvsize,
-        'Area: '    + address,
-        '',
-        'Details:',
-        details
-      ].join('\n');
-
-      window.location.href =
-        'mailto:wseroyer@gmail.com'
-        + '?subject=' + encodeURIComponent('TV Mounting Quote Request — ' + name)
-        + '&body='    + encodeURIComponent(body);
-    });
-  }
-
   /* ── Header scroll class ──────────────────────────────────── */
   var header = document.querySelector('.site-header');
   if (header) {

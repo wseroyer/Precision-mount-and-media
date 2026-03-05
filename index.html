@@ -428,22 +428,32 @@
 
           <div class="card" id="quote">
             <h3>Request a Quote</h3>
-            <p class="muted tiny">This form opens an email draft (free + simple). You can later swap to Formspree if desired.</p>
+            <p class="muted tiny">Fill out the form and Billy will get back to you quickly.</p>
 
-            <form id="quoteForm">
+            <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="8ae5d8c2-4ab5-4b0e-a248-10146e1b134e" />
+              <input type="hidden" name="subject" value="TV Mounting Quote Request — Precision Mount &amp; Media" />
+              <input type="hidden" name="redirect" value="https://precisionmountandmedia.com?sent=1" />
+              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
               <div class="field">
                 <label for="name">Your name</label>
                 <input id="name" name="name" type="text" placeholder="Jane Doe" required />
               </div>
 
               <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+
+              <div class="field">
                 <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" placeholder="(503) 555-0123" required />
+                <input id="phone" name="phone" type="tel" placeholder="(503) 555-0123" />
               </div>
 
               <div class="field">
                 <label for="tvsize">TV size</label>
-                <input id="tvsize" name="tvsize" type="text" placeholder='e.g., 65"' required />
+                <input id="tvsize" name="tvsize" type="text" placeholder='e.g., 65"' />
               </div>
 
               <div class="field">
@@ -452,12 +462,12 @@
               </div>
 
               <div class="field">
-                <label for="details">Details</label>
-                <textarea id="details" name="details" rows="4" placeholder="Wall type (drywall/brick), fireplace? soundbar? outlet install? Any photos?"></textarea>
+                <label for="message">Details</label>
+                <textarea id="message" name="message" rows="4" placeholder="Wall type (drywall/brick), fireplace? soundbar? outlet install? Any photos?" required></textarea>
               </div>
 
               <button class="btn btn-primary btn-block" type="submit">Send Quote Request</button>
-              <p class="tiny muted">Submitting opens your email app to send the request to Billy.</p>
+              <p class="tiny muted">Your message goes directly to Billy. He typically responds same day.</p>
             </form>
           </div>
         </div>

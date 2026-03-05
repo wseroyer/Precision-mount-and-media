@@ -318,7 +318,7 @@ h3 { font-size: var(--fs-lg); font-weight: 700; }
 
 /* ── 8. Hero ─────────────────────────────────────────────── */
 .hero {
-  padding: 80px 0 72px;
+  padding: 80px 0 56px;
   background-color: var(--c-bg);
   background-image:
     radial-gradient(ellipse 900px 500px at 10% 0%,  rgba(26,140,255,0.22) 0%, transparent 60%),
@@ -326,17 +326,21 @@ h3 { font-size: var(--fs-lg); font-weight: 700; }
     linear-gradient(180deg, #070a12 0%, #0b0f1e 60%, #080c18 100%);
   position: relative;
 }
-.hero::after {
-  content: "";
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, #ffffff);
-  pointer-events: none;
-  z-index: 0;
-}
-/* hero content above fade */
+/* hero content */
 .hero .container { position: relative; z-index: 1; }
+
+/* Wave divider between hero and features */
+.divider-wave {
+  display: block;
+  line-height: 0;
+  background: #07090f;
+  margin-bottom: -1px;
+}
+.divider-wave svg {
+  width: 100%;
+  height: 48px;
+  display: block;
+}
 
 .hero-grid {
   display: grid;
@@ -1010,7 +1014,6 @@ textarea { resize: vertical; min-height: 100px; }
 }
 @media (max-width: 980px) {
   .hero            { padding: 60px 0 40px; }
-  .hero::after     { display: none; }
   .hero-grid       { grid-template-columns: 1fr; }
   .hero-photo-panel { display: none; }
   .nav             { display: none; }
